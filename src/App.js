@@ -1,7 +1,7 @@
 import './App.css';
 import Header from './components/Header';
-import Button from './components/Button';
 import PrintObject from './components/PrintObject';
+import Form from './components/Form';
 
 function App() {
   return (
@@ -10,8 +10,9 @@ function App() {
         <Header />
       </div>
       <div>
-        <Button />
+        <Form />
       </div>
+
       <div>
         <PrintObject />
       </div>
@@ -20,9 +21,6 @@ function App() {
 }
 
 export default App;
-
-// const randomColor = require('randomcolor');
-// const chalk = require('chalk');
 
 // const hueColor = process.argv[2];
 // const luminosityColor = process.argv[3];
