@@ -1,35 +1,25 @@
-import { useState } from 'react';
 const randomColor = require('randomcolor');
 
-const Form = () => {
-  const [color, setColor] = useState('#000000');
+export default function Form() {
+  const [color, setColor]; = useState(#000000);
+  const changeColor = event => setColor(event.getElementById.value)
 
   return (
-    <form
-      className="form" //onSubmit={this.handleSubmit} >
-    >
-      {color}
+    <form className="color-form">
+      <label htmlFor="hue">Choose Color</label>
       <input
         className="input"
-        onChange={() => {
-          setColor(this.randomColor.hue);
-        }}
         type="text"
-        placeholder="Choose Color"
+        id="hue"
+        placeholder="red, yellow, blue..."
       />
 
+      <label htmlFor="luminosity">Luminosity</label>
       <input
         className="input"
-        name="lightness"
+        id="luminosity"
         type="text"
-        placeholder="Choose lightness"
-      />
-
-      <input
-        className="input"
-        name="blockSize"
-        type="text"
-        placeholder="Block-Size (WWxHH)"
+        placeholder="light, dark..."
       />
 
       <div>
@@ -39,6 +29,4 @@ const Form = () => {
       </div>
     </form>
   );
-};
-
-export default Form;
+}
