@@ -4,11 +4,12 @@ const randomColor = require('randomcolor');
 export default function Form(props) {
   const [hue, setHue] = useState('red');
   const [luminosity, setLuminosity] = useState('bright');
-  const [hex, setHex] = props.useState('#000000');
 
   return (
-    <div>
-      <label htmlFor="hue">Color</label>
+    <div className="Form">
+      <label className="select" htmlFor="hue">
+        Color
+      </label>
       <select
         onChange={(event) => {
           setHue(event.currentTarget.value);
@@ -41,12 +42,11 @@ export default function Form(props) {
         className="btn"
         type="submit"
         onClick={() => {
-          setHex(randomColor({ luminosity: luminosity, hue: hue }));
+          props.setHex(randomColor({ luminosity: luminosity, hue: hue }));
         }}
       >
         SHOW ME HEX!
       </button>
-      <h4 style={{ color: hex }}>{hex}</h4>
     </div>
   );
 }

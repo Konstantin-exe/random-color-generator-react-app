@@ -10,19 +10,35 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+Header {
+  align-items: center;
+  margin-bottom: 20px;
+  text-align: center;
+}
+
+label {
+  display: space-between;
+  padding: 10px;
+  margin: 20px;
+}
+.select {
+  align-items: center;
+}
+
 .container {
   max-width: 500px;
   margin: 30px auto;
   overflow: auto;
   min-height: 300px;
-  border: 1px solid steelblue;
+  border: 2px solid steelblue;
   padding: 30px;
   border-radius: 5px;
 }
 .hashBox {
   display: flex;
-  border: 1px solid black;
-  border-radius: 2px;
+  color: white;
+  border: 2px solid steelblue;
+  border-radius: 5px;
   max-width: 400px;
   margin: 30px;
   padding: 10px;
@@ -30,33 +46,22 @@ body {
   align-items: center;
 }
 
-.header {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-bottom: 20px;
-}
-
 .btn {
-  display: flex;
   background: steelblue;
   color: #fff;
   border: none;
-  padding: 5px 10px;
-  margin: space-between;
+  padding: 7px;
   border-radius: 5px;
   cursor: pointer;
   text-decoration: none;
   font-size: 15px;
   font-family: inherit;
+  margin: 20px;
+  margin-left: 150px;
 }
 
-.form {
-  display: space-between;
-  align-content: space-between;
-}
-.input {
-  display: inline-block;
+.Form {
+  justify-content: center;
 }
 
 .btn:focus {

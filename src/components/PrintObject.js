@@ -2,8 +2,8 @@ const randomColor = require('randomcolor');
 
 const PrintObject = (props) => {
   return (
-    <div className="hashBox">
-      <h4 style={{ color: props.hex }}>{props.hex}</h4>
+    <div style={{ background: props.hex }} className="hashBox">
+      <h4>{props.hex}</h4>
     </div>
   );
 };
