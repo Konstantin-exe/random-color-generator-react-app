@@ -6,16 +6,11 @@ import Form from './components/Form';
 function App() {
   return (
     <div className="container">
-      <div>
-        <Header />
-      </div>
-      <div>
-        <Form />
-      </div>
+      <Header />
 
-      <div>
-        <PrintObject />
-      </div>
+      <Form />
+
+      <PrintObject hex={hex} setHex={setHex} />
     </div>
   );
 }

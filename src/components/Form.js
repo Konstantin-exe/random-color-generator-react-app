@@ -1,32 +1,52 @@
+import { useState } from 'react';
 const randomColor = require('randomcolor');
 
-export default function Form() {
-  const [color, setColor]; = useState(#000000);
-  const changeColor = event => setColor(event.getElementById.value)
+export default function Form(props) {
+  const [hue, setHue] = useState('red');
+  const [luminosity, setLuminosity] = useState('bright');
+  const [hex, setHex] = useState('#000000');
 
   return (
-    <form className="color-form">
-      <label htmlFor="hue">Choose Color</label>
-      <input
-        className="input"
+    <div>
+      <label htmlFor="hue">Color</label>
+      <select
+        onChange={(event) => {
+          setHue(event.currentTarget.value);
+        }}
         type="text"
-        id="hue"
-        placeholder="red, yellow, blue..."
-      />
+        value={hue}
+      >
+        <option value="red">Red</option>
+        <option value="blue">Blue</option>
+        <option value="orange">Orange</option>
+        <option value="yellow">Yellow</option>
+        <option value="green">Green</option>
+        <option value="purple">Purple</option>
+        <option value="pink">Pink</option>
+      </select>
 
       <label htmlFor="luminosity">Luminosity</label>
-      <input
-        className="input"
-        id="luminosity"
-        type="text"
-        placeholder="light, dark..."
-      />
+      <select
+        onChange={(event) => {
+          setLuminosity(event.currentTarget.value);
+        }}
+        value={luminosity}
+      >
+        <option value="bright">Bright</option>
+        <option value="light">Light</option>
+        <option value="dark">Dark</option>
+      </select>
 
-      <div>
-        <button className="btn" type="submit" value="Submit">
-          DRAW ME!
-        </button>
-      </div>
-    </form>
+      <button
+        className="btn"
+        type="submit"
+        onClick={() => {
+          props.setHex(randomColor({ luminosity: luminosity, hue: hue }));
+        }}
+      >
+        SHOW ME HEX!
+      </button>
+      <h4 style={{ color: hex }}>{hex}</h4>
+    </div>
   );
 }
