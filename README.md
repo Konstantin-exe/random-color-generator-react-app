@@ -11,7 +11,6 @@ Enjoy!
 
 <img width="570" alt="Screenshot 2021-01-26 at 19 26 04" src="https://user-images.githubusercontent.com/70595672/105889050-08e58400-600e-11eb-82bb-8020b5fc6f90.png">
 
-
 ## Modules
 
 npm randomColor
