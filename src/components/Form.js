@@ -4,6 +4,17 @@ const randomColor = require('randomcolor');
 export default function Form(props) {
   const [hue, setHue] = useState('red');
   const [luminosity, setLuminosity] = useState('bright');
+  const hueList = [
+    'red',
+    'blue',
+    'orange',
+    'yellow',
+    'green',
+    'purple',
+    'pink',
+  ];
+
+  const luminosityList = ['bright', 'light', 'dark'];
 
   return (
     <div className="Form">
@@ -17,13 +28,12 @@ export default function Form(props) {
         type="text"
         value={hue}
       >
-        <option value="red">Red</option>
-        <option value="blue">Blue</option>
-        <option value="orange">Orange</option>
-        <option value="yellow">Yellow</option>
-        <option value="green">Green</option>
-        <option value="purple">Purple</option>
-        <option value="pink">Pink</option>
+        {hueList.map((hueItem) => (
+          <option key={hueItem} value={hueItem}>
+            {hueItem.charAt(0).toUpperCase() + hueItem.slice(1)}
+          </option>
+        ))}
+        ;
       </select>
 
       <label htmlFor="luminosity">Luminosity</label>
@@ -33,11 +43,13 @@ export default function Form(props) {
         }}
         value={luminosity}
       >
-        <option value="bright">Bright</option>
-        <option value="light">Light</option>
-        <option value="dark">Dark</option>
+        {luminosityList.map((luminosityItem) => (
+          <option key={luminosityItem} value={luminosityItem}>
+            {luminosityItem.charAt(0).toUpperCase() + luminosityItem.slice(1)}
+          </option>
+        ))}
+        ;
       </select>
-
       <button
         className="btn"
         type="submit"
@@ -46,6 +58,23 @@ export default function Form(props) {
         }}
       >
         SHOW ME HEX!
+      </button>
+      <button
+        type="submit"
+        className="btnluck"
+        onClick={() => {
+          props.setHex(
+            randomColor({
+              luminosity:
+                luminosityList[
+                  Math.floor(Math.random() * luminosityList.length)
+                ],
+              hue: hueList[Math.floor(Math.random() * hueList.length)],
+            }),
+          );
+        }}
+      >
+        FEEL LUCKY?
       </button>
     </div>
   );
