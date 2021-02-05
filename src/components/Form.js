@@ -13,7 +13,6 @@ export default function Form(props) {
     'purple',
     'pink',
   ];
-
   const luminosityList = ['bright', 'light', 'dark'];
 
   return (
